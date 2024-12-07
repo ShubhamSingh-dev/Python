@@ -23,8 +23,15 @@ def processCommand(c):
     elif "open instagram" in c.lower():
         webbrowser.open("https://instagram.com")
         speak("opening instagram")
-    else:
-        speak("I didn't understand that.")
+    elif c.lower().startswith("play"):
+        song = c.lower().split(" ")[1]
+        link = musicLibrary.music(song)
+        webbrowser.open(link)
+
+    elif "news" in c.lower():
+        webbrowser.open("https://www.bbc.com/news")
+        speak("opening news")
+    
 
 if __name__ == "__main__":
     speak("Initializing Jarvis....")
@@ -53,4 +60,4 @@ if __name__ == "__main__":
             print("Error; {0}".format(e))
 
 
-# hello
+
