@@ -1,1 +1,1 @@
-haahhapython study 
+python study 
